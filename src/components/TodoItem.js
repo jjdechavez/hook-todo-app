@@ -13,9 +13,14 @@ function TodoItem({todo}) {
     overflowX: 'hidden'
   };
   const deleteBtnStyle ={
-    marginRight: '1em',
     height: '2rem',
     background: 'red',
+    borderRadius: '50%',
+    cursor: 'pointer'
+  }
+  const updateBtnStyle ={
+    height: '2rem',
+    background: 'green',
     borderRadius: '50%',
     cursor: 'pointer'
   }
@@ -27,8 +32,21 @@ function TodoItem({todo}) {
         <p style={{textDecoration: todo.completed ? 'line-through' : ''}}>
           {todo.text}
         </p>
-      </div>                                          
-      <button style={deleteBtnStyle} onClick={() => dispatch({type: 'REMOVE_TODO', id: todo.id})}>X</button> 
+      </div>                
+      <div>
+        <button 
+          style={deleteBtnStyle} 
+          onClick={() => dispatch({type: 'REMOVE_TODO', id: todo.id})}
+        >
+          X
+        </button> 
+        <button 
+          style={updateBtnStyle} 
+          onClick={() => dispatch({type: 'EDIT_TODO', todo: {id: todo.id, text: todo.text, completed: todo.completed}})}
+        >
+          Up
+        </button>
+      </div>
     </div> 
   )
 }

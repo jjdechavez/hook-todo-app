@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import { TodoContext } from './context/TodoContext';
+import { TodoContext } from '../context/TodoContext';
 
 function Navbar() {
-  const {todos} = useContext(TodoContext);
+  const {state: {todos}} = useContext(TodoContext);
   const navbarStyle = {
     margin: '0',
     padding: '0',
