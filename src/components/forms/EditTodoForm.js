@@ -12,8 +12,7 @@ function AddTodoForm() {
       text: editTodo.text,
       completed: editTodo.completed
     }});
-  };
-
+    
   const inputStyle = {
     width: '99%',
     margin: '0 auto'
