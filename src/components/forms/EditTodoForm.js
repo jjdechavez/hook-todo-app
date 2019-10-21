@@ -4,6 +4,7 @@ import {TodoContext} from '../../context/TodoContext';
 function AddTodoForm() {
   const { dispatch, state: {currentTodo} } = useContext(TodoContext);
   const [editTodo, setEditTodo] = useState(currentTodo);
+  console.log(editTodo, 'getCurrentTodo')
 
   const handleSubmit = e => {
     e.preventDefault();

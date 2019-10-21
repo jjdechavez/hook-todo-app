@@ -42,7 +42,7 @@ function TodoItem({todo}) {
         </button> 
         <button 
           style={updateBtnStyle} 
-          onClick={() => dispatch({type: 'EDIT_TODO', todo: {id: todo.id, text: todo.text, completed: todo.completed}})}
+          onClick={() => dispatch({type: 'EDIT_TODO', todo})}
         >
           Up
         </button>

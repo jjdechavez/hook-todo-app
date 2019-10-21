@@ -5,7 +5,7 @@ import {todosData} from '../data';
 export const TodoContext = createContext();
 
 function TodoContextProvider(props) {
-  const initialFormState = {id: null, text: '', completed: false};
+  const initialFormState = {id: null, text: '', completed: null};
   const initialState = {todos: todosData, editing: false, currentTodo: initialFormState};
 
   const [state, dispatch] = useReducer(todoReducer, initialState);
