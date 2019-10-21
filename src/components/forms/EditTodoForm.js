@@ -10,10 +10,15 @@ function AddTodoForm() {
     e.preventDefault();
     dispatch({type: 'UPDATE_TODO', editTodo:{
       id: editTodo.id,
-      text: editTodo.text,
-      completed: editTodo.completed
+      text: editTodo.text
     }});
   };
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+
+    setEditTodo({ ...editTodo, [name]: value})
+  }
 
   const inputStyle = {
     width: '99%',
@@ -24,9 +29,10 @@ function AddTodoForm() {
     <form onSubmit={handleSubmit}>
       <input 
         type='text' 
+        name='text'
         style={inputStyle} 
         value={editTodo.text} 
-        onChange={(e) => setEditTodo(e.target.value)}
+        onChange={handleChange}
       />
     </form>
   )

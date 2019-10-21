@@ -25,24 +25,22 @@ export const todoReducer = (state, action) => {
         ...state,
         todos: state.todos.filter(todo => todo.id !== action.id)
       }
-    case 'EDIT_TODO':
-      console.log(action.todo, 'getTodo')
+    case 'SET_TODO':
       const current = {
         id: action.todo.id,
-        text: action.todo.text,
+        text: action.todo.text, 
         completed: action.todo.completed
       }
 
-      console.log(current, 'setCurrentTodo');
       return {
         ...state,
         editing: true,
-        currentTodo: current
+        currentTodo: current,
       }
     case 'UPDATE_TODO':
       const updateTodo = state.todos.map(todo => {
-        if (todo.id === state.currentTodo.id) {
-          todo = state.currentTodo;
+        if (todo.id === action.editTodo.id) {
+          todo.text = action.editTodo.text;
         }
         return todo;
       });

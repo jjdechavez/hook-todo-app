@@ -42,7 +42,7 @@ function TodoItem({todo}) {
         </button> 
         <button 
           style={updateBtnStyle} 
-          onClick={() => dispatch({type: 'EDIT_TODO', todo})}
+          onClick={() => dispatch({type: 'SET_TODO', todo})}
         >
           Up
         </button>
