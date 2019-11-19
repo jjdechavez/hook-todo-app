@@ -4,7 +4,6 @@ const app = express();
 
 MongoClient.connect('mongodb://localhost:27017/playground-app',{ useUnifiedTopology: true }, (err, client) => {
   err ? console.log(err) : console.log('MongoDB Connected');
-  // if (err) throw console.log(err);
 
   const db = client.db('playground-app');
   const todos = db.collection('todos');
